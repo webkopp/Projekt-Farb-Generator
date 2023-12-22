@@ -15,10 +15,10 @@ CSS3
 JavaScript
 
 GitHub Live-Vorschau
-Du findest eine Live Vorschau auf GitHub: 
+Du findest eine Live Vorschau auf GitHub: https://webkopp.github.io/Projekt-Farb-Generator/
 
 GitHub-Repository
-Du findest das gesamte Projekt auf GitHub: 
+Du findest das gesamte Projekt auf GitHub: https://github.com/webkopp/Projekt-Farb-Generator
 
 Aufgaben
 Die Auswahl des geratenen Farbwertes findet über das klicken einer von fünf Farbboxen statt. Ein Reset-me-Button setzt das Spiel auf Anfang zurück.
