@@ -3,37 +3,72 @@
 // - Es gibt fünf Buttons mit zufällig generierten Hintergrundfarben.
 // - Nur eine davon ist die richtige!
 
-function randomInteger(max) {
-    return Math.floor(Math.random()*(max + 1));
+let color = document.querySelector("#color")
+let box = Array.from(document.querySelectorAll("#box"))
+let outi = document.querySelector("#outi")
+
+let random = Math.round(Math.random() * (box.length -1))
+console.log("random", random)
+
+let randomRGB = () => {
+  fot (let i = 0; i < box.length; i++) {
+    r = Math.round(Math.random() * 256)
+    g = Math.round(Math.random() * 256)
+    b = Math.round(Math.random() * 256)
+
+    let rgb = `rgb(${r}, ${g}, ${b})`
+
+    box[i].style.backgroundColor = rgb
+    if (i === random) {
+      box.innerHTML = rgb
+    }
+    box[i].addEventListener("click", () => {
+      if (random === box.indexOf(event.target)) {
+        outi.innerHTML = "Prima ! Du kannst gut sehen."
+      } else {
+        outoput.innerHTML = "Geh bitte zum Optiker."
+      }
+    })
+  }
+}
+randomRGB()
+
+let changeColor = () => {
+  outi.innerHTML = " "
+  randomRGB()
 }
 
-function randomRgbColor() {
-    let r = randomInteger(255);
-    let g = randomInteger(255);
-    let b = randomInteger(255);
-    return [r,g,b];
-}
+// function randomInteger(max) {
+//     return Math.floor(Math.random()*(max + 1));
+// }
 
-function randomHexColor() {
-    let [r,g,b] =randomRgbColor();
+// function randomRgbColor() {
+//     let r = randomInteger(255);
+//     let g = randomInteger(255);
+//     let b = randomInteger(255);
+//     return [r,g,b];
+// }
 
-    let hr = r.toString(16).padStart(2, '0');
-    let hg = g.toString(16).padStart(2, '0');
-    let hb = b.toString(16).padStart(2, '0');
+// function randomHexColor() {
+//     let [r,g,b] =randomRgbColor();
 
-    return "#" + hr + hg + hb;
-}
+//     let hr = r.toString(16).padStart(2, '0');
+//     let hg = g.toString(16).padStart(2, '0');
+//     let hb = b.toString(16).padStart(2, '0');
 
-function changeColor() {
-  let hex = randomHexColor();
-  document.getElementById('color').value = hex;
-  document.getElementById('text').innerHTML = hex;
-}
+//     return "#" + hr + hg + hb;
+// }
 
-function clickHandler(event) {
-  changeColor();
-  event.preventDefault();
-}
+// function changeColor() {
+//   let hex = randomHexColor();
+//   document.getElementById('color').value = hex;
+//   document.getElementById('text').innerHTML = hex;
+// }
+
+// function clickHandler(event) {
+//   changeColor();
+//   event.preventDefault();
+// }
 
 // const setColor = () => {
 //     const randomColor = Math.floor(Math.random()*16777215).toString(16)
